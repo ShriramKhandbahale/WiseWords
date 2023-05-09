@@ -1,0 +1,39 @@
+@use '../util/variables' as *;
+
+html {
+    height: 100%;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+}
+
+html::-webkit-scrollbar {
+    width: 0px;
+}
+
+body {
+    background: $bg-clr-light;
+    height: 100%;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.App {
+    text-align: center;
+}
