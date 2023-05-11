@@ -1,0 +1,9 @@
+@use "../util/variables" as *;
+
+#light {
+  header {
+    a {
+      color: $txt-clr-light;
+    }
+  }
+}

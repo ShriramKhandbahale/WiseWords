@@ -1,0 +1,72 @@
+@use '../util/variables' as *;
+
+.navbar {
+  &__desktop {
+    li {
+      position: relative;
+      padding-bottom: 0.5rem;
+      padding-inline: 1rem;
+      text-decoration: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background-color: $txt-clr-light;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-out;
+        transform-origin: left center;
+      }
+
+      &:hover::after,
+      &.active::after {
+        transform: scaleX(1);
+      }
+    }
+
+    @media (width <=600px) {
+      display: none;
+    }
+  }
+
+  &__hamburger-menu {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    z-index: 432;
+
+    img {
+      width: 4rem;
+    }
+
+    @media (width >=600px) {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      margin-bottom: 5rem;
+      font-size: 2rem;
+      transition: all 0.3s ease;
+
+      &:hover,
+      &.active {
+        font-weight: 700;
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (width >=600px) {
+      display: none;
+    }
+  }
+}
