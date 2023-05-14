@@ -1,9 +1,45 @@
 @use "../util/variables" as *;
 
-#light {
-  header {
-    a {
-      color: $txt-clr-light;
+.App#light {
+  background: $bg-clr-light;
+  transition: all 0.3s ease;
+
+  * {
+    color: $txt-clr-light;
+
+    &::before,
+    &::after {
+      background: $txt-clr-light ;
+    }
+  }
+
+  .navbar__mobile {
+    transition: all 0.3s ease;
+    background-color: $bg-clr-light;
+  }
+}
+
+.App#dark {
+  transition: all 0.3s ease;
+  background: $bg-clr-dark;
+
+  * {
+    color: $txt-clr-dark;
+
+    &::before,
+    &::after {
+      background: $txt-clr-dark ;
+    }
+
+    .navbar {
+      &__hamburger-menu {
+        filter: brightness(0) invert(1);
+      }
+
+      &__mobile {
+        transition: all 0.3s ease;
+        background-color: $bg-clr-dark;
+      }
     }
   }
 }

@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ProfileIcon from "@assets/profile-icon-light.png"
+import ProfileIconLight from "@assets/profile-icon-light.png"
+import ProfileIconDark from "@assets/profile-icon-dark.png"
 import Switch from "./Switch";
 import MenuIcon from "@assets/menu-icon.svg"
 import CloseIcon from "@assets/close-icon.svg";
+import { useSelector } from "react-redux";
+
 
 const Navbar = () => {
 
+  const theme = useSelector((state) => state.theme.value)
+
   const [active, setActive] = useState("Home");
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); 
 
   const handleMenuClick = () => {
     setIsOpen(!isOpen);
@@ -52,7 +57,7 @@ const Navbar = () => {
               })}
             </ul>
             <div className="navbar__desktop__profile-icon">
-              <img src={ProfileIcon} alt="" />
+              <img src={theme == 'light' ? ProfileIconLight : ProfileIconDark} alt="" />
             </div>
           </nav>
         </header>
