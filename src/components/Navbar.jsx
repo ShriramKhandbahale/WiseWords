@@ -6,14 +6,15 @@ import Switch from "./Switch";
 import MenuIcon from "@assets/menu-icon.svg"
 import CloseIcon from "@assets/close-icon.svg";
 import { useSelector } from "react-redux";
-
+import { auth } from "../config/firebase";
+import { useAuthState } from "react-firebase-hooks/auth"
 
 const Navbar = () => {
 
   const theme = useSelector((state) => state.theme.value)
-
+  const [user] = useAuthState(auth);
   const [active, setActive] = useState("Home");
-  const [isOpen, setIsOpen] = useState(false); 
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleMenuClick = () => {
     setIsOpen(!isOpen);
@@ -57,7 +58,11 @@ const Navbar = () => {
               })}
             </ul>
             <div className="navbar__desktop__profile-icon">
-              <img src={theme == 'light' ? ProfileIconLight : ProfileIconDark} alt="" />
+              {user ? (
+                <img src={user?.photoURL} />
+              ) : (
+                <img src={theme === 'light' ? ProfileIconLight : ProfileIconDark} />
+              )}
             </div>
           </nav>
         </header>

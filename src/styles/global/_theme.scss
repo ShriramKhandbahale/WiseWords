@@ -17,6 +17,14 @@
     transition: all 0.3s ease;
     background-color: $bg-clr-light;
   }
+
+  .auth-card-container {
+    background: $card-clr-light;
+
+    button{
+      background-color: white;
+    }
+  }
 }
 
 .App#dark {
@@ -30,16 +38,20 @@
     &::after {
       background: $txt-clr-dark ;
     }
+  }
 
-    .navbar {
-      &__hamburger-menu {
-        filter: brightness(0) invert(1);
-      }
-
-      &__mobile {
-        transition: all 0.3s ease;
-        background-color: $bg-clr-dark;
-      }
+  .navbar {
+    &__hamburger-menu {
+      filter: brightness(0) invert(1);
     }
+
+    &__mobile {
+      transition: all 0.3s ease;
+      background-color: $bg-clr-dark;
+    }
+  }
+
+  .auth-card-container {
+    background: $card-clr-dark;
   }
 }

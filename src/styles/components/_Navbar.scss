@@ -32,6 +32,7 @@
   }
 
   &__hamburger-menu {
+    display: none;
     position: absolute;
     top: 1rem;
     right: 1.5rem;
@@ -41,8 +42,8 @@
       width: 4rem;
     }
 
-    @media (width >=600px) {
-      display: none;
+    @media (width <=600px) {
+      display: block;
     }
   }
 
