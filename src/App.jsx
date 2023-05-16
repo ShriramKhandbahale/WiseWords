@@ -7,6 +7,7 @@ import { useAuthState } from "react-firebase-hooks/auth"
 // components
 import Navbar from '@components/Navbar';
 import AuthCard from '@components/AuthCard';
+import LoadingScreen from '@components/LoadingScreen'
 
 // pages 
 import Home from '@pages/Home';
@@ -18,7 +19,7 @@ const App = () => {
   const [user, loading] = useAuthState(auth);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoadingScreen/>
   }
 
   return (

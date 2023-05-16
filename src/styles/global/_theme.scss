@@ -21,8 +21,20 @@
   .auth-card-container {
     background: $card-clr-light;
 
-    button{
+    button {
       background-color: white;
+    }
+  }
+
+  .home {
+    .hero {
+      button {
+        background: $card-clr-light;
+
+        &:hover {
+          background: $card-clr-hover-light;
+        }
+      }
     }
   }
 }
@@ -53,5 +65,17 @@
 
   .auth-card-container {
     background: $card-clr-dark;
+  }
+
+  .home {
+    .hero__generate-quote-btn {
+      button {
+        background: $card-clr-dark;
+
+        &:hover {
+          background: $card-clr-hover-dark;
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,55 @@
+@use '../util/variables' as *;
+
+.home {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .hero {
+        line-height: 1.5;
+
+        img {
+            display: none;
+            width: 60px;
+            border-radius: 100%;
+            margin-bottom: 1rem;
+
+            @media (width <=600px) {
+                display: inline-block;
+            }
+        }
+
+        &__message {
+            h1 {
+                font-size: 4rem;
+                font-weight: 400;
+
+                @media (width <=600px) {
+                    font-size: 3rem;
+                }
+            }
+
+            margin-bottom: 4rem;
+            width: 80vw;
+        }
+
+        button {
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 100;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        transform: translateY(-1rem);
+
+        @media (width >=600px) {
+            transform: translateY(-5rem);
+        }
+    }
+}
