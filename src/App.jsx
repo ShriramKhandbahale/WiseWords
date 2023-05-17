@@ -1,4 +1,3 @@
-import { useContext, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { auth } from './config/firebase';

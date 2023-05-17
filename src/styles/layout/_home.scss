@@ -1,7 +1,11 @@
 @use '../util/variables' as *;
 
 .home {
-    height: 100vh;
+    height: 88%;
+
+    @media (width <=600px) {
+        height: 100%;
+    }
 
     display: flex;
     justify-content: center;
@@ -49,7 +53,7 @@
         transform: translateY(-1rem);
 
         @media (width >=600px) {
-            transform: translateY(-5rem);
+            transform: translateY(-2rem);
         }
     }
 }

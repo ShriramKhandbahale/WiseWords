@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ProfileIconLight from "@assets/profile-icon-light.png"
 import ProfileIconDark from "@assets/profile-icon-dark.png"
 import Switch from "./Switch";
@@ -11,19 +11,14 @@ import { useAuthState } from "react-firebase-hooks/auth"
 
 const Navbar = () => {
 
+  const location = useLocation();
   const theme = useSelector((state) => state.theme.value)
   const [user] = useAuthState(auth);
-  const [active, setActive] = useState("Home");
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMenuClick = () => {
     setIsOpen(!isOpen);
   };
-
-  const handleNavClick = (e) => {
-    setActive(e.title)
-    handleMenuClick();
-  }
 
   const menu = [
     {
@@ -51,10 +46,12 @@ const Navbar = () => {
           <nav>
             <ul>
               {menu.map((e, key) => {
-                return <li className={active === e.title ? "active" : ""}
-                  key={key} onClick={() => handleNavClick(e)}>
-                  <Link to={e.link}>{e.title}</Link>
-                </li>
+                const isActive = location.pathname === e.link;
+                return (
+                  <li className={isActive ? "active" : ""} key={key} >
+                    <Link to={e.link}>{e.title}</Link>
+                  </li>
+                );
               })}
             </ul>
             <div className="navbar__desktop__profile-icon">
@@ -76,10 +73,12 @@ const Navbar = () => {
         <nav>
           <ul>
             {menu.map((e, key) => {
-              return <li className={active === e.title ? "active" : ""}
-                key={key} onClick={() => handleNavClick(e)}>
-                <Link to={e.link}>{e.title}</Link>
-              </li>
+              const isActive = location.pathname === e.link;
+              return (
+                <li className={isActive ? "active" : ""} key={key} onClick={() => handleMenuClick(e)}>
+                  <Link to={e.link}>{e.title}</Link>
+                </li>
+              );
             })}
           </ul>
           <div className="navbar__mobile__theme__toggle">
