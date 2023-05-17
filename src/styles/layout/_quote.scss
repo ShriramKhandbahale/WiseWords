@@ -13,10 +13,28 @@
     flex-direction: column;
 
     .quote-container {
-        transform: translateY(-1rem);
+        transform: translateY(-2rem);
+        width: 80%;
 
-        @media (width >=600px) {
-            transform: translateY(-2rem);
+        &__quote {
+            margin-bottom: 2rem;
+        }
+
+        &__author {
+            text-align: center;
+            // transform: translateX(-5%);
+        }
+    }
+
+    .generate-new-btn {
+        position: absolute;
+        bottom: 4rem;
+        left: 6rem;
+
+        @media (width <=600px) {
+            bottom: 5rem;
+            left: 50%;
+            transform: translateX(-50%);
         }
     }
 }

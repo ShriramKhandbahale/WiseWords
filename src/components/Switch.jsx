@@ -7,16 +7,12 @@ const Switch = () => {
   const dispatch = useDispatch();
   const theme = localStorage.getItem('theme') || 'light'; // Set a default theme if localTheme is null
 
-  // const [theme, setTheme] = useState(localTheme);
-
   useEffect(() => {
-    // setTheme(localTheme);
     dispatch(changeTheme(theme));
   }, [theme]);
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
-    // setTheme(newTheme);
     dispatch(changeTheme(newTheme));
     localStorage.setItem('theme', newTheme);
   };
