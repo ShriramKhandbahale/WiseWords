@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 
 const Switch = () => {
   const dispatch = useDispatch();
-  const theme = localStorage.getItem('theme') || 'light'; // Set a default theme if localTheme is null
+  const theme = localStorage.getItem('theme') || 'light';
 
   useEffect(() => {
     dispatch(changeTheme(theme));

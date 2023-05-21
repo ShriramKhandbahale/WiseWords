@@ -13,10 +13,10 @@
     }
 
     button {
-      background: $card-clr-light;
+      background-color: $card-clr-light;
 
       &:hover {
-        background: $card-clr-hover-light;
+        background-color: $card-clr-hover-light;
       }
     }
   }
@@ -31,6 +31,24 @@
 
     button {
       background-color: white;
+    }
+  }
+
+  #quote-page {
+    .share-bar {
+      background: $card-clr-light;
+
+      img:hover {
+        filter: invert(0.2);
+      }
+
+      .copied-msg {
+        background: $card-clr-dark;
+
+        span {
+          color: white;
+        }
+      }
     }
   }
 }
@@ -48,10 +66,10 @@
     }
 
     button {
-      background: $card-clr-dark;
+      background-color: $card-clr-dark;
 
       &:hover {
-        background: $card-clr-hover-dark;
+        background-color: $card-clr-hover-dark;
       }
     }
   }
@@ -69,5 +87,24 @@
 
   .auth-card-container {
     background: $card-clr-dark;
+
+    button {
+      background-color: $card-clr-hover-dark;
+    }
   }
+
+  #quote-page {
+    .share-bar {
+      background: $card-clr-dark;
+
+      img:hover {
+        filter: invert(0.8);
+      }
+
+      .copied-msg {
+        background-color: $card-clr-dark-2;
+      }
+    }
+  }
+
 }

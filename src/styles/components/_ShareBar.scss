@@ -1,0 +1,24 @@
+.share-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+    gap: 2rem;
+
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+
+    .copied-msg {
+        position: absolute;
+        content: 'copied';
+        transform: translate(-0.5rem, -1.5rem);
+        border-radius: 5px;
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    img {
+        width: 2rem;
+        filter: invert(0.5);
+        transition: 0.3s ease;
+        cursor: pointer;
+    }
+}
