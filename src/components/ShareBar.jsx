@@ -11,7 +11,7 @@ import CopyIcon from '@assets/copy-icon.svg';
 const ShareBar = (props) => {
   const [copied, setCopied] = useState(false);
 
-  const websiteURL = 'https://shriramkhandbahale.github.io/wisewords';
+  const websiteURL = 'https://wisewords.onrender.com';
   const msg = `"${props.quote}"\n- ${props.author}\n\n`;
 
   const copyToClipboard = () => {
