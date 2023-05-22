@@ -35,8 +35,6 @@ const Quotes = () => {
     return await Axios.get('https://api.quotable.io/random?maxLength=80').then(res => res.data);
   })
 
-  // console.log(window.innerWidth);
-
   return (
     <div id="quote-page">
       <AnimatePresence>

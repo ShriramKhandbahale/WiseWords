@@ -51,6 +51,16 @@
       }
     }
   }
+
+  #about-page {
+    background: $bg-clr-light;
+
+    #reference {
+      button {
+        color: whitesmoke;
+      }
+    }
+  }
 }
 
 .App#dark {
@@ -105,6 +115,10 @@
         background-color: $card-clr-dark-2;
       }
     }
+  }
+
+  #about-page {
+    background: $bg-clr-dark;
   }
 
 }

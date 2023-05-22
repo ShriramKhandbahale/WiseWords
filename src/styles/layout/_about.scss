@@ -1,0 +1,61 @@
+@use '../util/variables' as *;
+
+#about-page {
+    padding-top: 2rem;
+    text-align: left;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        display: grid;
+        gap: 4rem;
+        width: 70vw;
+
+        #info {
+            display: grid;
+            gap: 2rem;
+        }
+
+        #tools-used {
+
+            h2 {
+                margin-bottom: 1.2rem;
+            }
+
+            ul,
+            li {
+                margin-block: 1rem;
+                padding-left: 0.5rem;
+                display: block;
+            }
+        }
+
+        #reference {
+            button {
+                background: #323232;
+                padding: 1rem 2rem;
+                border: none;
+                border-radius: 8px;
+                background-image: url('@assets/github-logo.svg');
+                background-repeat: no-repeat;
+                padding-left: 3.5rem;
+                background-size: 2rem;
+                background-position: 15px center;
+                transition: 0.2s ease;
+
+                &:hover {
+                    cursor: pointer;
+                    opacity: 0.8;
+                }
+
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (width <=600px) {
+            margin-top: 5rem;
+        }
+    }
+
+}

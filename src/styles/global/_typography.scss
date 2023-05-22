@@ -1,51 +1,85 @@
-  @use '../util/variables' as *;
+@use '../util/variables' as *;
 
-  //   fonts 
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+//   fonts 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
 
-  * {
-      font-family: 'Inter', sans-serif;
-  }
+* {
+    font-family: 'Inter', sans-serif;
+}
 
-  header {
-      font-size: 1rem;
-  }
+header {
+    font-size: 1rem;
+}
 
-  .home {
-      .hero {
-          #welcome-greeting {
-              color: $txt-clr-secondary;
-          }
-      }
-  }
+.home {
+    .hero {
+        #welcome-greeting {
+            color: $txt-clr-secondary;
+        }
+    }
+}
 
-  #quote-page {
-      .quote-container {
-          &__quote {
+#quote-page {
+    .quote-container {
+        &__quote {
+            font-size: 1.5rem;
 
-              font-size: 1.5rem;
+            @media (width <=600px) {
+                font-size: 1.2rem;
+            }
 
-              @media (width <=600px) {
-                  font-size: 1.2rem;
-              }
+            h1 {
+                font-family: 'ABeeZee', sans-serif;
+                font-weight: 400;
+            }
+        }
 
-              h1 {
-                  font-family: 'ABeeZee', sans-serif;
-                  font-weight: 400;
-              }
-          }
+        &__author {
+            font-size: 1.5rem;
 
-          &__author {
-              font-size: 1.5rem;
+            @media (width <=600px) {
+                font-size: 1.2rem;
+            }
 
-              @media (width <=600px) {
-                  font-size: 1.2rem;
-              }
+            span {
+                color: $txt-clr-secondary;
+            }
+        }
+    }
+}
 
-              span {
-                  color: $txt-clr-secondary;
-              }
-          }
-      }
-  }
+#about-page {
+    #info {
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 500;
+        }
+
+        p,
+        a {
+            font-size: 1.2rem;
+            color: $txt-clr-secondary;
+        }
+
+        a {
+            font-weight: 700;
+        }
+    }
+
+    #tools-used {
+        h2 {
+            font-weight: 500;
+        }
+
+        li {
+            color: $txt-clr-secondary;
+
+            span {
+                color: inherit;
+                font-weight: 700;
+            }
+        }
+    }
+}
