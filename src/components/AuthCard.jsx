@@ -36,6 +36,7 @@ const AuthCard = () => {
         <button onClick={signIn}>Continue With Google</button>
       </div>
     </motion.div>
+
   )
 }
 

@@ -13,22 +13,10 @@ const themeSlice = createSlice({
   }
 })
 
-const navSlice  = createSlice({
-  name: "activePage",
-  initialState: "/",
-  reducers: {
-    setActivePage: (state, action) => {
-      state = action.payload
-    }
-  }
-})
-
 export const { changeTheme } = themeSlice.actions
-export const { setActivePage } = navSlice.actions
 
 export const store = configureStore({
   reducer: {
     theme: themeSlice.reducer,
-    activePage: navSlice.reducer,
   },
 });
