@@ -22,6 +22,7 @@
     }
   }
 
+  .navbar,
   .navbar__mobile {
     transition: all 0.3s ease;
     background-color: $bg-clr-light;
@@ -98,6 +99,7 @@
       filter: brightness(0) invert(1);
     }
 
+    &,
     &__mobile {
       transition: all 0.3s ease;
       background-color: $bg-clr-dark;

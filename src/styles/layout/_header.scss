@@ -4,6 +4,8 @@ header {
     align-items: center;
     margin-inline: 2rem;
     height: 12vh;
+    top: 0;
+
 
     nav,
     ul {
@@ -16,5 +18,14 @@ header {
     img {
         width: 3rem;
         border-radius: 100%;
+    }
+}
+
+@media (width >=600px) {
+    .App {
+        .navbar {
+            position: sticky;
+            top: 0;
+        }
     }
 }
