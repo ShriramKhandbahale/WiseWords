@@ -1,3 +1,4 @@
+// packages 
 import { useQuery } from "@tanstack/react-query";
 import Axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
@@ -36,10 +37,10 @@ const Quotes = () => {
   })
 
   return (
-    <div id="quote-page">
+    <div className="quote-page">
       <AnimatePresence>
         {quoteVisible &&
-          <motion.div className="quote-container"
+          <motion.div className="quote-page__quote-container"
             initial={{ opacity: 0 }}
             key={data?.content}
             animate={{ opacity: 1 }}
@@ -47,11 +48,11 @@ const Quotes = () => {
             transition={{ duration: 1 }}
           >
             {isLoading ? (theme == 'light' ? <StageSpinner color="#303030" /> : <StageSpinner />) : <>
-              <div className="quote-container__quote">
-                <h1>{data?.content}</h1>
+              <div className="quote-page__quote-container__quote">
+                <h1 id="quote">{data?.content}</h1>
               </div>
-              <div className="quote-container__author">
-                <span> - {data?.author}</span>
+              <div className="quote-page__quote-container__author">
+                <span id="author"> - {data?.author}</span>
               </div>
             </>
             }
@@ -59,16 +60,16 @@ const Quotes = () => {
         }
       </AnimatePresence>
 
-      <div className="generate-new-btn">
+      <div className="quote-page__generate-new-btn">
         <button onClick={handleQuoteChange}>Generate New</button>
       </div>
 
-      <div className="share-quote" onMouseEnter={handleMouseEnter}
+      <div className="quote-page__share-quote" onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}>
 
         <AnimatePresence>
           {isHovered &&
-            <motion.div className="share-bar-container"
+            <motion.div id="share-bar-container" className="quote-page__share-quote__share-bar-container"
               initial={{ scale: 0.5 }}
               animate={{ scale: 1, transformOrigin: window.innerWidth <= '600' ? 'center' : 'bottom right' }}
               transition={{ type: 'spring', damping: 20, stiffness: 200 }}
@@ -78,7 +79,7 @@ const Quotes = () => {
           }
         </AnimatePresence>
 
-        <div className="share-btn">
+        <div id="share-btn" className="quote-page__share-quote__share-btn">
           <img src={ShareIcon} alt="share" style={{
             opacity: isHovered && 1
           }} />

@@ -1,3 +1,4 @@
+// packages 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { changeTheme } from "../store";
@@ -7,6 +8,7 @@ const Switch = () => {
   const dispatch = useDispatch();
   const theme = localStorage.getItem('theme') || 'light';
 
+  // set global theme 
   useEffect(() => {
     dispatch(changeTheme(theme));
   }, [theme]);

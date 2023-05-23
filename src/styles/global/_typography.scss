@@ -13,15 +13,28 @@ header {
 }
 
 .home {
-    .hero {
-        #welcome-greeting {
+    &__hero {
+        line-height: 1.5;
+
+        &__message {
+            h1 {
+                font-size: 4rem;
+                font-weight: 400;
+
+                @media (width <=600px) {
+                    font-size: 3rem;
+                }
+            }
+        }
+
+        span#welcome-greeting {
             color: $txt-clr-secondary;
         }
     }
 }
 
-#quote-page {
-    .quote-container {
+.quote-page {
+    &__quote-container {
         &__quote {
             font-size: 1.5rem;
 
@@ -29,7 +42,7 @@ header {
                 font-size: 1.2rem;
             }
 
-            h1 {
+            h1#quote {
                 font-family: 'ABeeZee', sans-serif;
                 font-weight: 400;
             }
@@ -42,43 +55,44 @@ header {
                 font-size: 1.2rem;
             }
 
-            span {
+            span#author {
                 color: $txt-clr-secondary;
             }
         }
     }
 }
 
-#about-page {
-    #info {
+.about-page {
+    &__container {
+        #project-info {
+            h1 {
+                font-size: 3rem;
+                font-weight: 500;
+            }
 
-        h1 {
-            font-size: 3rem;
-            font-weight: 500;
-        }
+            p,
+            a {
+                font-size: 1.2rem;
+                color: $txt-clr-secondary;
+            }
 
-        p,
-        a {
-            font-size: 1.2rem;
-            color: $txt-clr-secondary;
-        }
-
-        a {
-            font-weight: 700;
-        }
-    }
-
-    #tools-used {
-        h2 {
-            font-weight: 500;
-        }
-
-        li {
-            color: $txt-clr-secondary;
-
-            span {
-                color: inherit;
+            a {
                 font-weight: 700;
+            }
+        }
+
+        #tools-used {
+            h2 {
+                font-weight: 500;
+            }
+
+            li {
+                color: $txt-clr-secondary;
+
+                span {
+                    color: inherit;
+                    font-weight: 700;
+                }
             }
         }
     }

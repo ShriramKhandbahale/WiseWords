@@ -1,6 +1,6 @@
 @use '../util/variables' as *;
 
-#quote-page {
+.quote-page {
     height: 88%;
 
     @media (width <=600px) {
@@ -12,9 +12,12 @@
     align-items: center;
     flex-direction: column;
 
-    .quote-container {
+    &__quote-container {
         transform: translateY(-2rem);
         width: 80%;
+        display: grid;
+        align-items: center;
+        justify-items: center;
 
         &__quote {
             margin-bottom: 2rem;
@@ -25,8 +28,7 @@
         }
     }
 
-
-    .generate-new-btn {
+    &__generate-new-btn {
         position: absolute;
         bottom: 4rem;
         left: 6rem;
@@ -38,7 +40,7 @@
         }
     }
 
-    .share-quote {
+    &__share-quote {
         position: absolute;
         bottom: 4rem;
         right: 6rem;
@@ -46,7 +48,7 @@
         display: grid;
         justify-items: right;
 
-        .share-btn {
+        &__share-btn {
             img {
                 opacity: 0.2;
                 width: 2.5rem;
@@ -65,11 +67,11 @@
             right: auto;
             justify-items: center;
 
-            .share-btn {
+            #share-btn {
                 order: 1;
             }
 
-            .share-bar-container {
+            #share-bar-container {
                 position: absolute;
                 top: 3rem;
                 order: 2;

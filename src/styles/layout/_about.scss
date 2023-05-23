@@ -1,24 +1,23 @@
 @use '../util/variables' as *;
 
-#about-page {
+.about-page {
     padding-top: 2rem;
     text-align: left;
     display: grid;
     justify-content: center;
     align-items: center;
 
-    .container {
+    &__container {
         display: grid;
         gap: 4rem;
         width: 70vw;
 
-        #info {
+        &__project-info {
             display: grid;
             gap: 2rem;
         }
 
-        #tools-used {
-
+        &__tools-used {
             h2 {
                 margin-bottom: 1.2rem;
             }
@@ -31,7 +30,7 @@
             }
         }
 
-        #reference {
+        &__github {
             button {
                 background: #323232;
                 padding: 1rem 2rem;
@@ -42,11 +41,11 @@
                 padding-left: 3.5rem;
                 background-size: 2rem;
                 background-position: 15px center;
-                transition: 0.2s ease;
+                transition: 0.3s ease;
 
                 &:hover {
                     cursor: pointer;
-                    opacity: 0.8;
+                    opacity: 0.95;
                 }
 
                 margin-bottom: 2rem;

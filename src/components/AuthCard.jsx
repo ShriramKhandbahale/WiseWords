@@ -1,3 +1,4 @@
+// packages 
 import React from 'react'
 import { motion } from 'framer-motion';
 import { auth, provider } from '../config/firebase';
@@ -8,12 +9,12 @@ const AuthCard = () => {
   const navigate = useNavigate();
 
   const signIn = async () => {
-    const res = await signInWithPopup(auth, provider);
+    await signInWithPopup(auth, provider);
     navigate('/')
   }
 
   return (
-    <motion.div className='auth-card-container'
+    <motion.div className='auth-card'
       initial={{
         top: '55%',
         opacity: 0.5,
@@ -28,15 +29,14 @@ const AuthCard = () => {
         opacity: 1,
       }}
     >
-      <div className="message">
+      <div className="auth-card__message">
         <h1>Sign In</h1>
-        <span id='auth-description'>We only show quotes to real people</span>
+        <span className='auth-card__message__description'>We only show quotes to real people</span>
       </div>
-      <div className="auth-btn">
+      <div className="auth-card__auth-btn">
         <button onClick={signIn}>Continue With Google</button>
       </div>
     </motion.div>
-
   )
 }
 

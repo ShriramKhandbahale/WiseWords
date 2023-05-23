@@ -1,5 +1,6 @@
 @use "../util/variables" as *;
 
+// light mode
 .App#light {
   background: $bg-clr-light;
   transition: all 0.3s ease;
@@ -26,15 +27,17 @@
     background-color: $bg-clr-light;
   }
 
-  .auth-card-container {
+  .auth-card {
+    transition: all 0.3s ease;
     background: $card-clr-light;
 
     button {
+      transition: all 0.3s ease;
       background-color: white;
     }
   }
 
-  #quote-page {
+  .quote-page {
     .share-bar {
       background: $card-clr-light;
 
@@ -42,7 +45,7 @@
         filter: invert(0.2);
       }
 
-      .copied-msg {
+      #copied-msg {
         background: $card-clr-dark;
 
         span {
@@ -52,18 +55,23 @@
     }
   }
 
-  #about-page {
+  .about-page {
     transition: all 0.3s ease;
     background: $bg-clr-light;
 
-    #reference {
-      button {
-        color: whitesmoke;
+    &__container {
+      &__github {
+        button {
+          background-color: #323232;
+          color: whitesmoke;
+        }
       }
     }
+
   }
 }
 
+// dark mode 
 .App#dark {
   transition: all 0.3s ease;
   background: $bg-clr-dark;
@@ -96,15 +104,17 @@
     }
   }
 
-  .auth-card-container {
+  .auth-card {
+    transition: all 0.3s ease;
     background: $card-clr-dark;
 
     button {
+      transition: all 0.3s ease;
       background-color: $card-clr-hover-dark;
     }
   }
 
-  #quote-page {
+  .quote-page {
     .share-bar {
       background: $card-clr-dark;
 
@@ -112,15 +122,14 @@
         filter: invert(0.8);
       }
 
-      .copied-msg {
+      #copied-msg {
         background-color: $card-clr-dark-2;
       }
     }
   }
 
-  #about-page {
+  .about-page {
     transition: all 0.3s ease;
     background: $bg-clr-dark;
   }
-
 }

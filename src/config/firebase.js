@@ -1,3 +1,5 @@
+// config for firebase auth (Google SSO)
+
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 

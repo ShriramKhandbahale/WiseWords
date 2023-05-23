@@ -1,4 +1,6 @@
 const About = () => {
+
+  // project info 
   const projectBrief = {
     projectTitle: "Random \"Quote\" Generator",
     projectDescription: "A simple front-end web project built using React.js that generates random quotes using the quotable API",
@@ -31,27 +33,28 @@ const About = () => {
     ]
   }
 
+  // navigate github repo 
   const goToGithub = () => {
     window.open("https://github.com/shriramkhandbahale/wisewords");
   }
 
   return (
-    <div id="about-page">
-      <div className="container">
-        <section id="info">
-          <div className="title">
+    <div className="about-page">
+      <div className="about-page__container">
+        <section className="about-page__container__project-info" id="project-info">
+          <div className="about-page__container__project-info__title">
             <h1>{projectBrief.projectTitle}</h1>
           </div>
-          <div className="description">
+          <div className="about-page__container__project-info__description">
             <p>
               {projectBrief.projectDescription}
             </p>
           </div>
-          <div className="context">
+          <div className="about-page__container__project-info__context">
             <p dangerouslySetInnerHTML={{ __html: projectBrief.projectContext }}></p>
           </div>
         </section>
-        <section id="tools-used">
+        <section className="about-page__container__tools-used" id="tools-used">
           <h2>Tools used</h2>
           <ul>
             {projectBrief.toolsUsed.map((e, key) => {
@@ -59,7 +62,7 @@ const About = () => {
             })}
           </ul>
         </section>
-        <section id="reference">
+        <section className="about-page__container__github">
           <button onClick={goToGithub}>Github</button>
         </section>
       </div>

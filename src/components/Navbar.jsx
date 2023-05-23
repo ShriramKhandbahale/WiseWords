@@ -1,13 +1,18 @@
+// packages 
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useAuthState } from "react-firebase-hooks/auth"
+
+// assets 
 import ProfileIconLight from "@assets/profile-icon-light.png"
 import ProfileIconDark from "@assets/profile-icon-dark.png"
 import Switch from "./Switch";
 import MenuIcon from "@assets/menu-icon.svg"
 import CloseIcon from "@assets/close-icon.svg";
-import { useSelector } from "react-redux";
+
+// util 
 import { auth } from "../config/firebase";
-import { useAuthState } from "react-firebase-hooks/auth"
 
 const Navbar = () => {
 
@@ -68,7 +73,7 @@ const Navbar = () => {
       <div className="navbar__hamburger-menu" onClick={handleMenuClick}>
         {isOpen ? <img src={CloseIcon} /> : <img src={MenuIcon} />}
       </div>
-
+  
       {isOpen && <div className="navbar__mobile">
         <nav>
           <ul>

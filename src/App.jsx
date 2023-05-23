@@ -1,7 +1,9 @@
+// packages 
 import { Route, Routes } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { auth } from './config/firebase';
 import { useAuthState } from "react-firebase-hooks/auth"
+
 // components
 import Navbar from '@components/Navbar';
 import AuthCard from '@components/AuthCard';

@@ -1,3 +1,4 @@
+// packages 
 import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -11,9 +12,11 @@ import CopyIcon from '@assets/copy-icon.svg';
 const ShareBar = (props) => {
   const [copied, setCopied] = useState(false);
 
-  const websiteURL = 'https://wisewords.onrender.com';
+  // message to share
   const msg = `"${props.quote}"\n- ${props.author}\n\n`;
+  const websiteURL = 'https://wisewords.onrender.com';
 
+  // display 'copied' message 
   const copyToClipboard = () => {
     setCopied(true)
     setTimeout(() => {
@@ -21,13 +24,14 @@ const ShareBar = (props) => {
     }, 500)
     navigator.clipboard.writeText(msg + websiteURL)
   }
+
   return (
     <div className='share-bar'>
 
-      <div className='copy-to-clipboard' onClick={copyToClipboard}>
+      <div className='share-bar__copy-to-clipboard' onClick={copyToClipboard}>
         <AnimatePresence>
           {copied &&
-            <motion.div className="copied-msg"
+            <motion.div id="copied-msg" className="share-bar__copy-to-clipboard__copied-msg"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
