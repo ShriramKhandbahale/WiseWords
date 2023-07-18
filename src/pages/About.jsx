@@ -4,7 +4,7 @@ const About = () => {
   const projectBrief = {
     projectTitle: "Random \"Quote\" Generator",
     projectDescription: "A simple front-end web project built using React.js that generates random quotes using the quotable API",
-    projectContext: "This was a basic project/task assigned to me as an assessment during my internship at <a href='https://ekatvaminnovations.com/' target='_blank'>Ekatvam Innovations</a>. It touches all the basic parts of react, so I learned a lot about the fundamentals and basics of React and it allowed me to demonstrate my understanding of React fundamentals.",
+    projectContext: "This was a basic project/task assigned to me as an assessment before my internship at <a href='https://ekatvaminnovations.com/' target='_blank'>Ekatvam Innovations</a>. It touches all the basic parts of react, so I learned a lot about the fundamentals and basics of React and it allowed me to demonstrate my understanding of React fundamentals.",
     toolsUsed: [
       {
         title: "Vite",
